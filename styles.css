@@ -1,0 +1,406 @@
+:root {
+    --main-color: linear-gradient(rgb(205, 228, 243), rgb(170, 197, 195));
+
+}
+
+* {
+    touch-action: manipulation;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition-duration: 500ms;
+    font-family: roboto;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html,
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+#screen-container {
+    height: 100vh;
+    width: 100vw;
+    background: var(--main-color);
+    transition-timing-function: cubic-bezier(.62, .12, .64, 1.02);
+}
+
+#menu-div {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: flex;
+    position: absolute;
+}
+
+#menu-svg {
+    scale: 140%;
+    margin: auto;
+    overflow: visible;
+}
+
+.menu-items {
+    transition-duration: 500ms;
+}
+
+.menu-text {
+    pointer-events: none;
+}
+
+#controls-div {
+    z-index: -1;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    border: 1px solid black;
+    opacity: 0;
+}
+
+#controls-svg {
+    margin: auto;
+}
+
+.controls-items {
+    transition-duration: 2000ms;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    opacity: 0;
+
+
+}
+
+#menuText {
+    pointer-events: none;
+}
+
+#menuReturnStroke {
+    cursor: pointer;
+}
+
+#options-div {
+    z-index: -1;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    opacity: 0;
+    transition-duration: 1000ms;
+    border: 2px solid black;
+}
+
+#options-svg {
+    margin: auto;
+
+
+}
+
+#toggle-button {
+    cursor: pointer;
+}
+
+.silence-pointers {
+    pointer-events: none;
+}
+
+#leaderboard-div {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+#leaderboard-svg {
+    margin: auto;
+}
+
+.leaderboard-items {
+    opacity: 0;
+}
+
+#shapes-div {
+    opacity: 0;
+    z-index: -2;
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#shapes-svg {
+    margin: auto;
+}
+
+#return-menu-button {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+#return-menu-button g {
+    pointer-events: all;
+}
+
+
+#game-box {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: -2;
+    position: absolute;
+    display: flex;
+}
+
+#in-game-menu-button {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+#in-game-menu-button g {
+    pointer-events: all;
+}
+
+#game-canvas {
+    border: 2px solid black;
+    width: 30vw;
+    min-width: 200px;
+    height: 60vw;
+    min-height: 400px;
+    max-height: 90vh;
+    max-width: 45vh;
+    margin: auto;
+}
+
+#up-next-div {
+    height: 45vw;
+    width: 22.5vw;
+    display: flex;
+    max-width: 150px;
+    max-height: 450px;
+    flex-direction: column;
+    margin: auto;
+    overflow: visible;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#score-board {
+    height: 20vw;
+    width: 20vw;
+    max-width: 200px;
+    margin: auto;
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#score-board div {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#score-board p {
+    margin: auto;
+}
+
+.up-next-div-childs {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+.next-up {
+    border: 5px solid rgb(96, 187, 218);
+}
+
+.up-next-div-childs canvas {
+    overflow: visible;
+    margin: auto;
+    /* border: 2px solid blue; */
+    max-width: 100%;
+}
+
+
+#controls-for-mobile {
+    display: none;
+}
+
+
+@media (max-width:800px) {
+    #return-menu-button g {
+        scale: 60%;
+    }
+
+    #return-menu-button {
+        left: 5%;
+    }
+
+    .shapes-grids-svgs {
+        transform-origin: center;
+        transition-duration: 0;
+        scale: 200%;
+    }
+
+    #game-box {
+        flex-direction: column;
+        padding: 5%;
+        padding-bottom: 110px;
+    }
+
+    #score-board {
+        max-height: 60px;
+        max-width: 60px;
+        font-size: 20px;
+    }
+
+    #score-board div {
+        flex-direction: row;
+    }
+
+    #up-next-div {
+        flex-direction: row;
+        width: 90vw;
+        height: 30vw;
+        max-width: 225px;
+        max-height: 75px;
+    }
+
+    #controls-for-mobile {
+        margin: auto;
+        width: 80%;
+        max-width: 300px;
+        min-width: 150px;
+        display: flex;
+        height: 30vw;
+        max-height: 100px;
+        min-height: 50px;
+        flex-direction: row;
+        padding: 4px;
+    }
+
+    .mobile-controls {
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+
+    #rotate-and-drop {
+        display: flex;
+        flex-direction: column;
+        border: none;
+    }
+
+    #rotate-and-drop div {
+        height: 45%;
+        width: 95%;
+        margin: auto;
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+
+    /* #game-end-buttons-div svg:hover {
+        transform: skew(-20deg);
+    } */
+    .menu-text {
+        fill: rgba(128, 128, 128, 0.283);
+    }
+
+
+}
+
+#game-over-div {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -3;
+    padding-bottom: 110px;
+}
+
+#game-over-text {
+    margin: auto;
+    width: 15vw;
+    scale: 300%;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0;
+}
+
+#game-over-svg {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    margin: auto;
+}
+
+#game-end-score-numbers-div {
+    opacity: 0;
+    z-index: -100;
+    position: absolute;
+}
+
+#game-over-score-div {
+    max-width: 90%;
+    width: min-content;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+#game-over-score-div svg {
+    margin-left: 5px;
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+    scale: 70%;
+    opacity: 0;
+}
+
+#game-end-buttons-div svg {
+    scale: 60%;
+    margin: auto;
+}
+
+
+#game-end-buttons-div {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    opacity: 0;
+}
+
+#gradient-svg {
+    position: absolute;
+    opacity: 0;
+}
+
+.to-skew {
+    pointer-events: none;
+}
